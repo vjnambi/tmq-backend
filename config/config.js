@@ -5,7 +5,7 @@ module.exports = {
         "username": "vjnambi",
         "password": process.env.MYSQL_PASSWORD,
         "database": "thrensmusicquizdb",
-        "host": "thre.mysql.database.azure.com",
+        "host": "vjnambidb.mysql.database.azure.com",
         "dialect": "mysql"
     },
     "test": {
