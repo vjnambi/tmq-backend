@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const {users} = require("../models")
-const bcrypt = require("bcrypt")
+const crypto = require("crypto")
 
 router.post("/", async (req, res) => {
     const {username, password} = req.body
@@ -10,7 +10,10 @@ router.post("/", async (req, res) => {
     if(!target){
         res.json("no such user found")
     } else {
-        if(await bcrypt.compare(password, target.password)){
+        var hash = crypto.pbkdf2Sync(password, target.salt, 1000, 64, `sha512`).toString(`hex`)
+        console.log(hash)
+        console.log(target.password)
+        if(hash === target.password){
             res.json("login successful")
         } else {
             res.json("wrong password")
