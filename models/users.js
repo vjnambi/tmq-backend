@@ -8,5 +8,9 @@ module.exports = (sequelize, DataTypes) => {
     }
     )
 
+    users.associate = (models) => {
+        users.hasMany(models.questionsets, {onDelete: "cascade"})
+    }
+
     return users
 }

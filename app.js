@@ -9,6 +9,10 @@ const cors = require("cors");
 const indexRouter = require("./routes/index")
 const registerRouter = require("./routes/register")
 const loginRouter = require("./routes/login")
+const vqsRouter = require("./routes/viewQuestionSets")
+const vqRouter = require("./routes/viewQuestions")
+const cqsRouter = require("./routes/createQuestionSet")
+const cqRouter = require("./routes/createQuestion")
 
 var app = express();
 
@@ -27,6 +31,10 @@ app.use(cors());
 app.use("/", indexRouter)
 app.use("/register", registerRouter)
 app.use("/login", loginRouter)
+app.use("/viewQuestionSets", vqsRouter)
+app.use("/viewQuestions", vqRouter)
+app.use("/createQuestionSet", cqsRouter)
+app.use("/createQuestion", cqRouter)
 
 
 // catch 404 and forward to error handler

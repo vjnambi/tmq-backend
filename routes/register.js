@@ -11,7 +11,6 @@ router.post("/", async (req, res) => {
      
     hash = crypto.pbkdf2Sync(password, salt,  
     1000, 64, `sha512`).toString(`hex`); 
-    console.log(typeof(hash))
     
 
     users.create({
