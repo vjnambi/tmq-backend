@@ -3,14 +3,25 @@ const { validateToken } = require("../middleware/validateJWT")
 const router = express.Router()
 const {questionsets, questions} = require("../models")
 const {decode} = require("jsonwebtoken")
+const axios = require("axios")
 
 router.post("/", validateToken, async (req, res) => {
     const {name} = req.body
     const accessToken = req.header("accessToken")
     const payload = decode(accessToken)
-    await questionsets.create({name: name, userId: payload.id})
+    const newqs = await questionsets.create({name: name, userId: payload.id})
     
     const qs = JSON.parse(JSON.stringify(await questionsets.findAll({where: {userId: payload.id}})))
+    const body = {
+        "id": newqs.id,
+        "name": newqs.name
+    }
+    const header = {
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+    axios.post("http://40.88.46.64/solr/my_core/update/json/docs?commit=true", body, header)
     for(i = 0; i < qs.length; i++){
         qs[i].questions = JSON.parse(JSON.stringify(await questions.findAll({where: {questionsetId: qs[i].id}})))
 

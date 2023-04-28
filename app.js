@@ -13,6 +13,7 @@ const vqsRouter = require("./routes/viewQuestionSets")
 const vqRouter = require("./routes/viewQuestions")
 const cqsRouter = require("./routes/createQuestionSet")
 const cqRouter = require("./routes/createQuestion")
+const sqsRouter = require("./routes/searchQuestionSet")
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use("/viewQuestionSets", vqsRouter)
 app.use("/viewQuestions", vqRouter)
 app.use("/createQuestionSet", cqsRouter)
 app.use("/createQuestion", cqRouter)
+app.use("/searchQuestionSet", sqsRouter)
 
 
 // catch 404 and forward to error handler
