@@ -14,6 +14,7 @@ const vqRouter = require("./routes/viewQuestions")
 const cqsRouter = require("./routes/createQuestionSet")
 const cqRouter = require("./routes/createQuestion")
 const sqsRouter = require("./routes/searchQuestionSet")
+const vq2Router = require("./routes/viewQuestions2")
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use("/register", registerRouter)
 app.use("/login", loginRouter)
 app.use("/viewQuestionSets", vqsRouter)
 app.use("/viewQuestions", vqRouter)
+app.use("/viewQuestions2",vq2Router)
 app.use("/createQuestionSet", cqsRouter)
 app.use("/createQuestion", cqRouter)
 app.use("/searchQuestionSet", sqsRouter)
