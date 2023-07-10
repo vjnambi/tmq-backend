@@ -9,17 +9,17 @@ module.exports = {
         "dialect": "mysql"
     },
     "test": {
-        "username": "vjnambi",
+        "username": "tmqadmin",
         "password": process.env.MYSQL_PASSWORD,
         "database": "thrensmusicquizdb",
-        "host": "vjnambidb.mysql.database.azure.com",
+        "host": "thrensmusicquizsrvr.mysql.database.azure.com",
         "dialect": "mysql"
     },
     "production": {
-        "username": "vjnambi",
+        "username": "tmqadmin",
         "password": process.env.MYSQL_PASSWORD,
         "database": "thrensmusicquizdb",
-        "host": "vjnambidb.mysql.database.azure.com",
+        "host": "thrensmusicquizsrvr.mysql.database.azure.com",
         "dialect": "mysql"
     }
 };
