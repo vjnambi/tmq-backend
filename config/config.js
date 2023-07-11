@@ -13,13 +13,25 @@ module.exports = {
         "password": process.env.MYSQL_PASSWORD,
         "database": "thrensmusicquizdb",
         "host": "thrensmusicquizsrvr.mysql.database.azure.com",
-        "dialect": "mysql"
+        "dialect": "mysql",
+        "ssl": true,
+        "dialectOptions": {
+            "ssl": {
+                "require": true
+            }
+        }
     },
     "production": {
         "username": "tmqadmin@thrensmusicquizsrvr",
         "password": process.env.MYSQL_PASSWORD,
         "database": "thrensmusicquizdb",
         "host": "thrensmusicquizsrvr.mysql.database.azure.com",
-        "dialect": "mysql"
+        "dialect": "mysql",
+        "ssl": true,
+        "dialectOptions": {
+            "ssl": {
+                "require": true
+            }
+        }
     }
 };
