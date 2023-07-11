@@ -1,6 +1,6 @@
 # tmq-backend
 Description:
-A music quiz platform where users can play in and spectate music quiz battles. Players can participate in a battle where they listen to an audio excerpt from a pool of songs and guess the title of the song. Each correctly guessed song earns the player a point and the player with the most points at the end of the game is declared the winner.
+A music quiz platform where users can play in and spectate music quiz battles. Players can participate in a battle where they listen to an audio excerpt from a pool of songs and guess the title of the song. Each correctly guessed song earns the player a point and the player with the most points at the end of the game is declared the winner!
 
 <br />
 
