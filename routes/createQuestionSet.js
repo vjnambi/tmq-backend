@@ -15,7 +15,7 @@ router.post("/", validateToken, async (req, res) => {
     const body = {
         "value": [
             {
-                "id": newqs.id,
+                "id": newqs.id.toString(),
                 "name": newqs.name
             }
         ]
