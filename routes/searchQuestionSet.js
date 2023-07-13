@@ -15,7 +15,7 @@ router.post("/", async (req, res) => {
         }
     }
     const temp = (await axios.get(`https://thrensmusicquizsearch.search.windows.net/indexes/questionsets/docs?search=${query}&api-version=2020-06-30`),{},header).data
-    if(temp.response.value[0] > 0){
+    if(temp.response.value[0]){
         res.json(temp.response.value)
     } else {
         res.json("No results found")
