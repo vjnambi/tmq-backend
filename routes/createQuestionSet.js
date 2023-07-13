@@ -13,15 +13,21 @@ router.post("/", validateToken, async (req, res) => {
     
     const qs = JSON.parse(JSON.stringify(await questionsets.findAll({where: {userId: payload.id}})))
     const body = {
-        "id": newqs.id,
-        "name": newqs.name
+        "value": [
+            {
+                "id": newqs.id,
+                "name": newqs.name
+            }
+        ]
+        
     }
     const header = {
         "headers": {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "api-key": "i0Be6ATlgGrpUt47eeYmsvp0JZZSLhraJiKu4qhpsSAzSeAnTxl1"
         }
     }
-    axios.post("http://40.88.46.64/solr/my_core/update/json/docs?commit=true", body, header)
+    axios.post("https://thrensmusicquizsearch.search.windows.net/indexes/questionsets/docs/index?api-version=2020-06-30", body, header)
     for(i = 0; i < qs.length; i++){
         qs[i].questions = JSON.parse(JSON.stringify(await questions.findAll({where: {questionsetId: qs[i].id}})))
 
