@@ -14,9 +14,9 @@ router.post("/", async (req, res) => {
             "api-key": "i0Be6ATlgGrpUt47eeYmsvp0JZZSLhraJiKu4qhpsSAzSeAnTxl1"
         }
     }
-    const temp = (await axios.get(`https://thrensmusicquizsearch.search.windows.net/indexes/questionsets/docs?search=${query}&api-version=2020-06-30`),{},header).data
-    if(temp.response.value[0]){
-        res.json(temp.response.value)
+    const temp = (await axios.get(`https://thrensmusicquizsearch.search.windows.net/indexes/questionsets/docs?search=${query}&api-version=2020-06-30`,header)).data
+    if(temp.value[0]){
+        res.json(temp.value)
     } else {
         res.json("No results found")
     }
