@@ -11,7 +11,7 @@ router.post("/", async (req, res) => {
     const header = {
         "headers": {
             "Content-Type": "application/json",
-            "api-key": "i0Be6ATlgGrpUt47eeYmsvp0JZZSLhraJiKu4qhpsSAzSeAnTxl1"
+            "api-key": process.env.SEARCH_API_KEY
         }
     }
     const temp = (await axios.get(`https://thrensmusicquizsearch.search.windows.net/indexes/questionsets/docs?search=${query}&api-version=2020-06-30`,header)).data

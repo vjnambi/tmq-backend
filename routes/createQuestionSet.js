@@ -24,7 +24,7 @@ router.post("/", validateToken, async (req, res) => {
     const header = {
         "headers": {
             "Content-Type": "application/json",
-            "api-key": "i0Be6ATlgGrpUt47eeYmsvp0JZZSLhraJiKu4qhpsSAzSeAnTxl1"
+            "api-key": process.env.SEARCH_API_KEY
         }
     }
     axios.post("https://thrensmusicquizsearch.search.windows.net/indexes/questionsets/docs/index?api-version=2020-06-30", body, header)
